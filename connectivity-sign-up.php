@@ -30,10 +30,9 @@ function newuser()
 
 function signup()
 {
-	echo "Reached Sign-Up";
 if(!empty($_POST['mobile']))   //checking the 'user' name which is from Sign-Up.html, is it empty or have some text
 {
-	echo "3";
+	// echo "3";
 	$con=mysqli_connect("localhost","root","","ops") or die( mysqli_error());
 	$mob = $_POST['mobile'];
 	$pass = $_POST['pass'];
@@ -41,7 +40,7 @@ if(!empty($_POST['mobile']))   //checking the 'user' name which is from Sign-Up.
 	// $query = "SELECT * FROM customers WHERE mobile like '" . $mob . "' AND pass like '" . $pass . "'";
 	$result = mysqli_query($con, $query) or die(mysqli_error());
 
-	if(!$row = mysqli_fetch_array($result) or die(mysqli_error()))
+	if(!$row = mysqli_fetch_array($result))
 	{
 		newuser();
 	}
