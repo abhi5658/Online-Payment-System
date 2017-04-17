@@ -8,8 +8,8 @@ define('DB_PASSWORD','');
 $con=mysqli_connect("localhost","root","","ops") or die("Failed to connect to mysqli: " . mysqli_error());
 // $db=mysqli_select_db("ops",$con) or die("Failed to connect to mysqli: " . mysqli_error());
 
-$fullnam = $_POST['mobile'];
-echo $fullnam;
+// $fullnam = $_POST['mobile'];
+// echo $fullnam;
 
 function newuser()
 {
@@ -19,12 +19,11 @@ function newuser()
 	$mobile = $_POST['mobile'];
 	$email = $_POST['email'];
 	$password =  $_POST['pass'];
-	echo "2";
 	$new_query = "INSERT INTO customers (name,mobile,email,password) VALUES ('$fullname','$mobile','$email','$password')";
 	$data = mysqli_query ($con, $new_query) or die(mysqli_error());
 	if($data)
 	{
-	echo "YOUR REGISTRATION IS COMPLETED...";
+	echo "<center><h1>YOUR REGISTRATION IS COMPLETED...</h1></center>";
 	}
 }
 
@@ -50,7 +49,6 @@ if(!empty($_POST['mobile']))   //checking the 'user' name which is from Sign-Up.
 	}
 }
 }
-echo "reached sign";
 signup();
 /*if(isset($_POST['submit']))
 {
@@ -58,3 +56,12 @@ signup();
 	signup();
 }*/
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<a href="index.html">Login Now...</a>
+</body>
+</html>
